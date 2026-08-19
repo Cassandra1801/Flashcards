@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +8,37 @@
 </head>
 <body>
 <header class="topbar">
-  <button id="homeBtn" class="brand" type="button">📚 Flashcards</button>
-  <span id="dueBadge" class="due-badge hidden"></span>
+  <a class="brand" href="index.html">📚 Flashcards</a>
 </header>
 
-<main id="app" class="app"></main>
+<main class="app">
+  <h1>Dine bunker</h1>
+  <p class="intro">Klik på en bunke for at studere kortene.</p>
 
-<template id="tpl-deck-card">
-  <div class="deck-card">
-    <div class="deck-card-main">
-      <h3 class="deck-name"></h3>
-      <p class="deck-meta"></p>
-    </div>
-    <div class="deck-card-actions">
-      <button class="btn btn-primary btn-study" type="button">Study</button>
-      <button class="btn btn-secondary btn-manage" type="button">Manage</button>
-      <button class="btn btn-danger btn-delete-deck" type="button">Delete</button>
-    </div>
+  <div class="deck-list">
+    <a class="deck-card" href="decks/spansk-verber.html">
+      <div class="deck-card-main">
+        <h3 class="deck-name">Spanske udsagnsord</h3>
+        <p class="deck-meta">3 kort</p>
+      </div>
+      <span class="deck-arrow" aria-hidden="true">→</span>
+    </a>
   </div>
-</template>
 
-<template id="tpl-card-row">
-  <div class="card-row">
-    <div class="card-row-text">
-      <p class="card-front"></p>
-      <p class="card-back"></p>
-      <p class="card-srs-info"></p>
-    </div>
-    <div class="card-row-actions">
-      <button class="btn btn-secondary btn-edit-card" type="button">Edit</button>
-      <button class="btn btn-danger btn-delete-card" type="button">Delete</button>
-    </div>
-  </div>
-</template>
-
-<script src="js/storage.js"></script>
-<script src="js/srs.js"></script>
-<script src="js/app.js"></script>
+  <section class="howto">
+    <h2>Sådan tilføjer du dine egne kort</h2>
+    <ol>
+      <li>Åbn filen <code>decks/spansk-verber.html</code> i en teksteditor (fx VS Code).</li>
+      <li>Find en hel <code>&lt;details class="card"&gt;...&lt;/details&gt;</code>-blok og kopiér den.</li>
+      <li>Indsæt kopien, og skriv dit eget spørgsmål (i <code>card-front</code>) og svar (i <code>card-back</code>).</li>
+    </ol>
+    <h2>Sådan opretter du en ny bunke</h2>
+    <ol>
+      <li>Kopiér filen <code>decks/spansk-verber.html</code>, og giv kopien et nyt navn, fx <code>decks/engelsk-ord.html</code>.</li>
+      <li>Ret overskriften og kortene i den nye fil.</li>
+      <li>Tilføj et nyt <code>&lt;a class="deck-card"&gt;</code>-link til den her på forsiden (kopiér blokken ovenfor).</li>
+    </ol>
+  </section>
+</main>
 </body>
 </html>
